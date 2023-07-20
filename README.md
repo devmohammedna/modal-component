@@ -17,7 +17,7 @@ To use the React Modal Component in your project, follow these steps:
 1- clone project in your device
 
 ```bash 
-git clone
+git clone https://github.com/devmohammedna/modal-component.git
 ```
 
 2- Install the component from npm using your package manager of choice (npm)
