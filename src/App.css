@@ -1,38 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+}
+
 .App {
-  text-align: center;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+.button {
+  cursor: pointer;
+  width: 150px;
+  height: 45px;
+  border-radius: 13px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.2s ease all;
+  background: #e2e2e2;
+  font-size: 1rem;
+}
+.button:hover {
+  transform: scale(0.99) translateY(-1px);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.modal-overlay {
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+
+}
+.top {
+  align-items: flex-start;
+}
+.center {
+  align-items: center;
+}
+.bottom {
+  align-items: flex-end;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.modal-box {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 11px 15px -7px,
+    rgba(0, 0, 0, 0.14) 0px 24px 38px 3px, rgba(0, 0, 0, 0.12) 0px 9px 46px 8px;
+  border-radius: 0.5rem;
+  min-height: 400px;
+  margin: 32px;
+  overflow-y: auto;
+  max-height: calc(100% - 64px);
+  width: calc(100% - 64px);
+  max-width: calc(100% - 64px);
+}
+.xs {
+  max-width: 444px;
+}
+.sm {
+  max-width: 600px;
+}
+.md {
+  max-width: 900px;
+}
+.lg {
+  max-width: 1200px;
+}
+.xl {
+  max-width: 1536px;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.modal-header{
+  min-height: 40px;
+  border-bottom: 0.5px solid #e2e2e2;
+  width: 100%;
+  padding: 5px;
+}
+.modal-content{
+  position: relative;
+  overflow-y: auto;
+  min-height: calc(400px - 80px);
+}
+.modal-footer{
+  position: relative;
+  bottom: 0;
+  min-height: 40px;
+  border-top: 0.5px solid #e2e2e2;
+  width: 100%;
+  padding: 5px;
+
 }

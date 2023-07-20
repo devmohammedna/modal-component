@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Modal } from "./components/modal";
 
 function App() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button className="button" onClick={handleOpen}>
+        Open Modal
+      </button>
+      <Modal position="center" open={open} onClose={handleClose}>
+        <Modal.Header>React Modal Component text Example</Modal.Header>
+        <Modal.Content>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+        </Modal.Content>
+        <Modal.Footer>
+          <button onClick={handleClose}>Close</button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
