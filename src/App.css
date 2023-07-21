@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: sans-serif;
+  font-family: "robot" sans-serif;
 }
 
 .App {
@@ -14,6 +14,14 @@ body {
   flex-direction: column;
   justify-content: center;
   height: 100vh;
+  gap: 30px;
+}
+.modal-example-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
 }
 .button {
   cursor: pointer;
@@ -26,10 +34,20 @@ body {
   transition: 0.2s ease all;
   background: #e2e2e2;
   font-size: 1rem;
+  color: #2e2e2e;
+  margin: 5px;
 }
 .button:hover {
   transform: scale(0.99) translateY(-1px);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
 }
 
 .modal-overlay {
@@ -41,7 +59,6 @@ body {
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
-
 }
 .top {
   align-items: flex-start;
@@ -85,25 +102,57 @@ body {
   max-width: 1536px;
 }
 
-
-
-.modal-header{
+.modal-header {
   min-height: 40px;
   border-bottom: 0.5px solid #e2e2e2;
   width: 100%;
   padding: 5px;
 }
-.modal-content{
+.modal-content {
   position: relative;
   overflow-y: auto;
   min-height: calc(400px - 80px);
+  padding: 15px;
 }
-.modal-footer{
+.modal-footer {
   position: relative;
   bottom: 0;
   min-height: 40px;
   border-top: 0.5px solid #e2e2e2;
   width: 100%;
-  padding: 5px;
+  padding: 15px;
+}
 
+.submit {
+  background: #2e2e2e;
+  color: #e2e2e2;
+}
+
+.submit:hover {
+  background: #e2e2e2;
+  color: #2e2e2e;
+}
+
+.action-form {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.control-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.control-form label {
+  font-size: 1.2rem;
+}
+.control-form input {
+  height: 36px;
+  min-width: 310px;
+  border-radius: 7px;
+  outline: none;
+  border: 1px solid #c2c2c2;
+  padding: 10px;
+  font-size: 1rem;
 }

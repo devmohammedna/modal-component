@@ -1,31 +1,21 @@
-import React from "react";
 import "./App.css";
-import { Modal } from "./components/modal";
-
+import { ModalForm, ModalImage, ModalText } from "./example";
 function App() {
-  const [open, setOpen] = React.useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   return (
     <div className="App">
-      <button className="button" onClick={handleOpen}>
-        Open Modal
-      </button>
-      <Modal position="center" open={open} onClose={handleClose}>
-        <Modal.Header>React Modal Component text Example</Modal.Header>
-        <Modal.Content>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-        </Modal.Content>
-        <Modal.Footer>
-          <button onClick={handleClose}>Close</button>
-        </Modal.Footer>
-      </Modal>
+      <h1>Modal Component</h1>
+      <h4>
+        This is a simple example of how to use modal component in reactjs.
+      </h4>
+
+      {/* Text Modal Example */}
+      <ModalText />
+
+      {/* Image Modal Example */}
+      <ModalImage />
+
+      {/* form Modal Example */}
+      <ModalForm />
     </div>
   );
 }
